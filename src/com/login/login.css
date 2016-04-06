@@ -1,0 +1,55 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color: white;
+    
+}
+#login{
+    -fx-border-color: #3FEC47;
+    -fx-background-color: #3FEC47;
+}
+#login_out{
+    -fx-border-color: green;
+    -fx-background-color: green;
+}
+#exit{
+    -fx-background-color: red;
+}
+#exit_out{
+    -fx-border-color: #803f2c;
+    -fx-background-color: #803f2c;  
+}
+.title_lbl{
+    -fx-padding: 5px;
+    -fx-background-color: #59372d;
+}
+.close_btn{
+    -fx-border-color: #803f2c;
+    -fx-background-color: #803f2c;    
+}
+
+#field{
+    -fx-border-color: #b59aff;
+}
+
+#field_green{
+    -fx-border-color: #00BA08;
+    -fx-background-color: #CCFFCE;
+}
+#field_red{
+    -fx-border-color: red;
+    -fx-background-color: #FFE5E5;
+}
+#show{
+    -fx-opacity: 1;
+}
+#hide{
+    -fx-opacity: 0;
+}
+#login_btn{
+    -fx-border-color: green;
+    -fx-background-color: green;
+    -fx-padding: 5px;
+}

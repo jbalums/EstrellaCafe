@@ -1,0 +1,36 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+#menu_bar{
+    -fx-background-color:#5B3E36;
+}
+
+.close_btn{
+    -fx-border-color: #803f2c;
+    -fx-background-color: #803f2c;    
+}
+#exit{
+    -fx-background-color: red;
+}
+#exit_out{
+    -fx-border-color: #803f2c;
+    -fx-background-color: #803f2c;  
+}
+#menu_btn{
+    -fx-border-color:#5B3E36;
+    -fx-padding:10px;
+    -fx-background-color:#5B3E36;
+    -fx-border-radius:0px;
+    -fx-background-radius: 0px;
+}
+#menu_btn_hover{
+    -fx-border-color:#432F29;
+    -fx-padding:10px;
+    -fx-background-color:#432F29;
+    -fx-border-radius:0px;
+    -fx-background-radius: 0px;
+}

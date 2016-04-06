@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orders.OrdersController">
+    <stylesheets>
+        <URL value="@orders.css" />
+    </stylesheets>
+    <children>
+        <Label prefHeight="41.0" prefWidth="914.0" style="-fx-padding: 10px; -fx-background-color: #57372D;" text="Orders" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TabPane layoutX="1.0" layoutY="43.0" prefHeight="627.0" prefWidth="913.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Orders">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="894.0">
+                     <children>
+                        <TableView fx:id="orderTable" layoutX="5.0" layoutY="20.0" prefHeight="566.0" prefWidth="427.0">
+                           <columns>
+                              <TableColumn fx:id="or1" prefWidth="36.0" text="#" />
+                              <TableColumn fx:id="or2" prefWidth="118.0" text="Total Qty. Ordered" />
+                              <TableColumn fx:id="or3" prefWidth="152.0" text="Date Ordered" />
+                              <TableColumn fx:id="or31" prefWidth="104.0" text="Issued By" />
+                           </columns></TableView>
+                        <TitledPane animated="false" layoutX="438.0" layoutY="20.0" prefHeight="566.0" prefWidth="473.0" text="Order Info">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="540.0" prefWidth="440.0">
+                                 <children>
+                                    <Label layoutX="163.0" layoutY="407.0" text="Total Payable :">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="odTable1" layoutX="14.0" layoutY="14.0" prefHeight="379.0" prefWidth="408.0">
+                                       <columns>
+                                          <TableColumn fx:id="clv1" prefWidth="174.0" text="Product Name" />
+                                          <TableColumn fx:id="clv21" minWidth="0.0" prefWidth="92.0" text="Price" />
+                                          <TableColumn fx:id="clv31" minWidth="0.0" prefWidth="47.0" text="Qty" />
+                                          <TableColumn fx:id="clv41" minWidth="0.0" prefWidth="87.0" text="Payable" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="165.0" layoutY="449.0" text="Amount Paid :">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="205.0" layoutY="498.0" text="Change :">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="total_payable1" alignment="CENTER_RIGHT" layoutX="280.0" layoutY="405.0" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: white;" text="0.00">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="money1" alignment="CENTER_RIGHT" layoutX="280.0" layoutY="447.0" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: white;" text="0.00">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="change1" alignment="CENTER_RIGHT" layoutX="280.0" layoutY="496.0" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: white;" text="0.00">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab onSelectionChanged="#change" text="Add Order">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="595.0" prefWidth="894.0" style="-fx-background-color: white;">
+                     <children>
+                        <Pane layoutX="325.0" layoutY="7.0" prefHeight="178.0" prefWidth="563.0" style="-fx-border-color: #5a4545;">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="25.0" layoutY="90.0" style="-fx-padding: 5px;" text="Product Name :" textAlignment="RIGHT" textFill="#5a4545" />
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="23.0" layoutY="128.0" prefHeight="27.0" prefWidth="92.0" style="-fx-padding: 5px;" text="Quantity :" textAlignment="RIGHT" textFill="#5a4545" />
+                              <Button id="submit_btn" fx:id="add_btn" layoutX="345.0" layoutY="87.0" mnemonicParsing="false" onAction="#addItemsToOrder" prefHeight="68.0" prefWidth="193.0" text="Add Item to Order" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font></Button>
+                              <Label alignment="CENTER" layoutX="2.0" layoutY="2.0" prefHeight="40.0" prefWidth="559.0" style="-fx-padding: 10px; -fx-background-color: #5a4545;" text="Add Order Form" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="s_notif" alignment="CENTER" contentDisplay="RIGHT" layoutX="42.0" layoutY="50.0" opacity="0.0" prefHeight="27.0" prefWidth="498.0" style="-fx-padding: 5; -fx-border-radius: 10px; -fx-background-color: #ADFFAD;" text="Order submitted successfully!" textAlignment="CENTER" textFill="#006505">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="input_field" fx:id="pname" disable="true" layoutX="117.0" layoutY="89.0" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" promptText="Product Name" />
+                              <TextField id="input_field" fx:id="qty" layoutX="116.0" layoutY="127.0" minWidth="-Infinity" prefHeight="29.0" prefWidth="200.0" promptText="Quantity" />
+                           </children>
+                        </Pane>
+                        <TableView fx:id="p_table" layoutX="4.0" layoutY="39.0" prefHeight="534.0" prefWidth="316.0">
+                          <columns>
+                            <TableColumn fx:id="c_pname" prefWidth="167.0" text="Product" />
+                            <TableColumn fx:id="c_qty" prefWidth="75.0" text="Qty Left" />
+                              <TableColumn fx:id="c_price" prefWidth="66.0" text="Price" />
+                          </columns>
+                        </TableView>
+                        <VBox fx:id="vbx" layoutX="9.0" layoutY="7.0" prefHeight="30.0" prefWidth="316.0" />
+                        <TitledPane animated="false" layoutX="325.0" layoutY="189.0" prefHeight="385.0" prefWidth="563.0" text="Order Details">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="315.0" prefWidth="338.0">
+                                 <children>
+                                    <Button id="submit_btn" fx:id="add_btn1" layoutX="42.0" layoutY="314.0" mnemonicParsing="false" onAction="#submitOrder" prefHeight="35.0" prefWidth="478.0" text="Submit Order" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial" size="17.0" />
+                                       </font></Button>
+                                    <Label layoutX="337.0" layoutY="225.0" prefHeight="17.0" prefWidth="88.0" text="Total Payable :">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" layoutX="338.0" layoutY="255.0" prefHeight="17.0" prefWidth="84.0" text="Money :">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField id="field" fx:id="money" alignment="CENTER_RIGHT" layoutX="430.0" layoutY="251.0" prefHeight="27.0" prefWidth="120.0" promptText="Money" />
+                                    <Label fx:id="total_payable" alignment="CENTER_RIGHT" layoutX="429.0" layoutY="226.0" prefHeight="17.0" prefWidth="116.0" text="0.00" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="odTable" layoutX="6.0" layoutY="2.0" prefHeight="216.0" prefWidth="550.0">
+                                      <columns>
+                                        <TableColumn fx:id="clv" prefWidth="216.0" text="Product Name" />
+                                        <TableColumn fx:id="clv2" minWidth="0.0" prefWidth="104.0" text="Price" />
+                                          <TableColumn fx:id="clv3" minWidth="0.0" prefWidth="76.0" text="Qty" />
+                                          <TableColumn fx:id="clv4" minWidth="0.0" prefWidth="136.0" text="Payable" />
+                                      </columns>
+                                    </TableView>
+                                    <Pane fx:id="notify_add_order" layoutX="8.0" layoutY="222.0" opacity="0.0" prefHeight="87.0" prefWidth="322.0" style="-fx-background-color: #A4FFB0; -fx-border-color: #0CCF25; -fx-border-radius: 10px; -fx-background-radius: 10px;">
+                                       <children>
+                                          <Label layoutX="69.0" layoutY="14.0" textFill="GREEN">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="15.0" prefHeight="17.0" prefWidth="77.0" text="Change :" textFill="GREEN">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="change" alignment="CENTER" layoutX="99.0" layoutY="4.0" prefHeight="50.0" prefWidth="128.0" text="0.00" textAlignment="RIGHT" textFill="GREEN">
+                                             <font>
+                                                <Font name="System Bold" size="34.0" />
+                                             </font>
+                                          </Label>
+                                          <Button id="submit_btn" layoutX="98.0" layoutY="52.0" mnemonicParsing="false" onAction="#Okay" prefHeight="25.0" prefWidth="127.0" text="Okay!" textFill="WHITE" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Sales Report">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="335.0" prefWidth="700.0">
+                     <children>
+                        <TableView fx:id="orderReportTable" layoutX="14.0" layoutY="63.0" prefHeight="502.0" prefWidth="515.0">
+                          <columns>
+                            <TableColumn fx:id="c1" prefWidth="44.0" text="Order#" />
+                            <TableColumn fx:id="c2" prefWidth="101.0" text="Date Ordered" />
+                              <TableColumn fx:id="c3" prefWidth="144.0" text="Product Ordered" />
+                              <TableColumn fx:id="c4" prefWidth="106.0" text="Qty. Ordered" />
+                              <TableColumn fx:id="c5" prefWidth="112.0" text="Payable" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="14.0" layoutY="31.0" prefHeight="17.0" prefWidth="41.0" text="From :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="from" layoutX="55.0" layoutY="26.0" prefWidth="150.0" promptText="Date From" style="-fx-background-color: white; -fx-border-color: #57372D;" />
+                        <DatePicker fx:id="to" layoutX="295.0" layoutY="26.0" prefWidth="150.0" promptText="Date To" style="-fx-background-color: white; -fx-border-color: #57372D;" />
+                        <Label layoutX="269.0" layoutY="31.0" prefHeight="17.0" prefWidth="26.0" text="To :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="31.0" />
+                        <Button id="submit_btn" layoutX="598.0" layoutY="363.0" mnemonicParsing="false" onAction="#genRep" style="-fx-padding: 15;" text="Generate Sales Report" textFill="WHITE">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Button>
+                        <Button id="submit_btn" fx:id="gobtn" layoutX="469.0" layoutY="27.0" mnemonicParsing="false" onAction="#salesReport" prefHeight="25.0" prefWidth="60.0" text="Go" textFill="WHITE" />
+                        <Label layoutX="562.0" layoutY="207.0" text="Total Sales :">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="573.0" layoutY="301.0" text="Total Qty :">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="ts2" alignment="CENTER" layoutX="666.0" layoutY="189.0" prefHeight="64.0" prefWidth="149.0" style="-fx-background-color: #DBFFE1;" text="00.00">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="tq2" alignment="CENTER" layoutX="666.0" layoutY="283.0" prefHeight="64.0" prefWidth="149.0" style="-fx-background-color: #DBFFE1;" text="00">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Pane fx:id="gsr" layoutX="541.0" layoutY="437.0" opacity="0.0" prefHeight="121.0" prefWidth="362.0" style="-fx-background-color: #B7FFAF; -fx-border-color: green; -fx-border-radius: 20; -fx-background-radius: 20;">
+                           <children>
+                              <Label layoutX="42.0" layoutY="24.0" text="Report Successfully Generated!" textFill="#01571e">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Button id="submit_btn" fx:id="gobtn1" layoutX="151.0" layoutY="74.0" mnemonicParsing="false" onAction="#hidegsr" prefHeight="25.0" prefWidth="60.0" text="Okay" textFill="WHITE" />
+                           </children>
+                        </Pane>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+    </children>
+</AnchorPane>

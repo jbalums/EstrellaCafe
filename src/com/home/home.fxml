@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="913.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.home.HomeController">
+    <stylesheets>
+        <URL value="@home.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="15.0" layoutY="50.0" prefHeight="486.0" prefWidth="512.0" style="-fx-border-color: #F2E2D7; -fx-padding: 10px;" />
+      <Label prefHeight="41.0" prefWidth="913.0" style="-fx-padding: 10px; -fx-background-color: #57372D;" text="Dashboard" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TableView layoutX="550.0" layoutY="76.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

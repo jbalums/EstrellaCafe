@@ -1,0 +1,32 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+#input_field{
+     -fx-border-color: #6A4F46;
+     -fx-padding:5px;
+}
+#input_red{
+    
+     -fx-border-color: red;
+     -fx-padding:5px;
+}
+#show{
+    -fx-opacity:1;
+}
+#hide{
+    -fx-opacity:0;
+}
+#submit_btn{
+    -fx-background-color:#10AA24;
+}
+#submit_btn:hover{
+    -fx-background-color:#016E0F;
+}
+
+#field{
+    -fx-border-color: #b59aff;
+}

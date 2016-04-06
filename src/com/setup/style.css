@@ -1,0 +1,69 @@
+.mainFxmlClass {
+    -fx-background-color: #D4D4D4;
+}
+
+#header{
+    -fx-background-color: #55AB4F;
+}
+
+.mainFxmlClass{
+    -fx-background-color: white;
+    -fx-border-color: green;
+}
+
+#label_err{
+    -fx-opacity: 0;
+}
+
+#label_error{
+    -fx-opacity: 1;
+}
+
+.username, .password{
+    -fx-background-color: white;
+    -fx-border-color:  #7779C2;
+}
+
+.textbox{
+    -fx-background-color: white;
+    -fx-border-radius: 0px;
+    -fx-border-color: #646464;
+}
+
+#success{
+    -fx-background-color: #A6FF97;
+    -fx-border-color: #2C8A1C;
+    -fx-border-radius: 0px;
+}
+
+#error{
+    -fx-background-color: #FFDDDD;
+    -fx-border-color: #FF5959;
+    -fx-border-radius: 0px;
+}
+
+.submit_btn{
+    -fx-background-color: green;
+    -fx-border-color: green;
+    -fx-padding: 5px;
+}
+
+.ba{
+   -fx-background-color:white;
+}
+#ba{
+   -fx-background-color:white;
+   -fx-border-color:white;    
+}
+#ba_err{
+   -fx-border-color:white;
+}
+
+.close_btn{
+    -fx-background-color: red;
+    
+}
+
+.body{
+    -fx-background-color: #eee;
+}

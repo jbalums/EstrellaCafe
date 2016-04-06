@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.products.ProductsController">
+    <stylesheets>
+        <URL value="@products.css" />
+    </stylesheets>
+   <children>
+      <Label layoutY="-6.0" prefHeight="41.0" prefWidth="900.0" style="-fx-padding: 10px; -fx-background-color: #57372D;" text="Products" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TabPane layoutX="3.0" layoutY="43.0" prefHeight="555.0" prefWidth="895.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab onSelectionChanged="#tabChange" text="Products">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="p_table" layoutX="61.0" layoutY="39.0" prefHeight="449.0" prefWidth="693.0">
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy></TableView>
+                        <VBox fx:id="vbx3" layoutX="10.0" layoutY="8.0" prefHeight="30.0" prefWidth="397.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab onSelectionChanged="#tabChange" text="Add Product">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="335.0" prefWidth="700.0" style="-fx-background-color: white;">
+                     <children>
+                        <Pane layoutX="200.0" layoutY="14.0" prefHeight="465.0" prefWidth="477.0" style="-fx-border-color: #5a4545;">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="25.0" layoutY="90.0" style="-fx-padding: 5px;" text="Product Name :" textAlignment="RIGHT" textFill="#5a4545" />
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="24.0" layoutY="138.0" prefHeight="27.0" prefWidth="92.0" style="-fx-padding: 5px;" text="Quantity :" textAlignment="RIGHT" textFill="#5a4545" />
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="26.0" layoutY="184.0" prefHeight="27.0" prefWidth="90.0" style="-fx-padding: 5px;" text="Price :" textAlignment="RIGHT" textFill="#5a4545" />
+                              <Button id="submit_btn" fx:id="add_btn" layoutX="43.0" layoutY="299.0" mnemonicParsing="false" onAction="#addProducts" prefHeight="49.0" prefWidth="391.0" text="Add Product" textFill="WHITE" />
+                              <Label alignment="CENTER" layoutX="2.0" layoutY="2.0" prefHeight="40.0" prefWidth="473.0" style="-fx-padding: 10px; -fx-background-color: #5a4545;" text="Add Product Form" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button id="input_field" fx:id="clear_btn" layoutX="379.0" layoutY="422.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="11.0" prefWidth="77.0" text="Clear Fields" />
+                              <Label fx:id="s_notif" alignment="CENTER" contentDisplay="RIGHT" layoutX="42.0" layoutY="50.0" opacity="0.0" prefHeight="27.0" prefWidth="390.0" style="-fx-padding: 5; -fx-border-radius: 10px; -fx-background-color: #ADFFAD;" text="Product added Successfully!&#10;" textAlignment="CENTER" textFill="#006505">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="rs" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="233.0" prefHeight="27.0" prefWidth="105.0" style="-fx-padding: 5px;" text="Re-Stock-Point :" textAlignment="RIGHT" textFill="#5a4545" />
+                              <TextField id="input_field" fx:id="pname" layoutX="117.0" layoutY="89.0" minWidth="-Infinity" prefHeight="29.0" prefWidth="332.0" promptText="Product Name" />
+                              <TextField id="input_field" fx:id="qty" layoutX="117.0" layoutY="137.0" minWidth="-Infinity" prefHeight="29.0" prefWidth="332.0" promptText="Quantity" />
+                              <TextField id="input_field" fx:id="prc" layoutX="117.0" layoutY="183.0" minWidth="-Infinity" prefWidth="332.0" promptText="Price" />
+                              <TextField id="input_field" fx:id="rsp" layoutX="117.0" layoutY="232.0" minWidth="-Infinity" prefWidth="332.0" promptText="Re-Stock-Point" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab onSelectionChanged="#tabChange" text="Edit Product">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="335.0" prefWidth="700.0">
+                     <children>
+                        <TableView fx:id="p_table2" fixedCellSize="0.0" layoutX="11.0" layoutY="40.0" prefHeight="469.0" prefWidth="405.0">
+                           <columns>
+                              <TableColumn fx:id="c1" prefWidth="37.0" sortable="false" text="#" />
+                              <TableColumn fx:id="c2" prefWidth="150.0" sortable="false" text="Product Name" />
+                              <TableColumn fx:id="c3" prefWidth="53.0" sortable="false" text="Quatity" />
+                              <TableColumn fx:id="c4" prefWidth="50.0" sortable="false" style="-fx-text-align: right;" text="Price" />
+                              <TableColumn fx:id="c5" prefWidth="98.0" sortable="false" text="Re Stock Point" />
+                           </columns></TableView>
+                        <Pane layoutX="448.0" layoutY="41.0" prefHeight="465.0" prefWidth="434.0" style="-fx-border-color: #5a4545;">
+                           <children>
+                              <Label contentDisplay="RIGHT" layoutX="15.0" layoutY="82.0" prefHeight="27.0" prefWidth="201.0" style="-fx-padding: 5px;" text="Product Name :" textFill="#5a4545" />
+                              <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="138.0" prefHeight="27.0" prefWidth="92.0" style="-fx-padding: 5px;" text="Quantity :" textFill="#5a4545" />
+                              <Label contentDisplay="RIGHT" layoutX="15.0" layoutY="191.0" prefHeight="27.0" prefWidth="90.0" style="-fx-padding: 5px;" text="Price :" textFill="#5a4545" />
+                              <Button id="edit_btn" fx:id="add_btn1" layoutX="65.0" layoutY="312.0" mnemonicParsing="false" onAction="#save" prefHeight="41.0" prefWidth="306.0" text="Update Product" textFill="WHITE" />
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="40.0" prefWidth="433.0" style="-fx-padding: 10px; -fx-background-color: #5a4545;" text="Edit Product Form" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button id="input_field" fx:id="clear_btn1" layoutX="339.0" layoutY="422.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="11.0" prefWidth="77.0" text="Clear Fields" />
+                              <Label fx:id="s_notif1" alignment="CENTER" contentDisplay="RIGHT" layoutX="20.0" layoutY="49.0" opacity="0.0" prefHeight="27.0" prefWidth="391.0" style="-fx-padding: 5; -fx-border-radius: 10px; -fx-background-color: #ADFFAD;" text="Product edited successfully!&#10;" textAlignment="CENTER" textFill="#006505">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="rs1" contentDisplay="RIGHT" layoutX="18.0" layoutY="242.0" prefHeight="27.0" prefWidth="105.0" style="-fx-padding: 5px;" text="Re-Stock-Point :" textFill="#5a4545" />
+                              <TextField id="input_field" fx:id="pname1" layoutX="122.0" layoutY="82.0" prefHeight="25.0" prefWidth="250.0" promptText="Product Name" />
+                              <TextField id="input_field" fx:id="qty1" layoutX="122.0" layoutY="135.0" prefHeight="29.0" prefWidth="250.0" promptText="Quantity" />
+                              <TextField id="input_field" fx:id="prc1" layoutX="122.0" layoutY="186.0" prefWidth="250.0" promptText="Price" />
+                              <TextField id="input_field" fx:id="rsp1" layoutX="122.0" layoutY="242.0" prefWidth="250.0" promptText="Re-Stock-Point" />
+                           </children>
+                        </Pane>
+                        <VBox fx:id="vbx" layoutX="3.0" layoutY="8.0" prefHeight="30.0" prefWidth="397.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab onSelectionChanged="#tabChange" text="Delete Product">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="335.0" prefWidth="700.0">
+                     <children>
+                        <TableView fx:id="p_table3" layoutX="7.0" layoutY="40.0" prefHeight="474.0" prefWidth="395.0" />
+                        <Pane layoutX="415.0" layoutY="38.0" prefHeight="409.0" prefWidth="454.0" style="-fx-border-color: #5a4545;">
+                           <children>
+                              <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="100.0" prefHeight="27.0" prefWidth="201.0" style="-fx-padding: 5px;" text="Product Name :" textFill="#5a4545" />
+                              <Button id="del_btn" fx:id="del_btn" layoutX="69.0" layoutY="332.0" mnemonicParsing="false" onAction="#delProduct" prefHeight="49.0" prefWidth="309.0" text="Delete Product" textFill="WHITE" />
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="40.0" prefWidth="453.0" style="-fx-padding: 10px; -fx-background-color: #5a4545;" text="Delete Product" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="s_notif11" alignment="CENTER" contentDisplay="RIGHT" layoutX="22.0" layoutY="55.0" opacity="0.0" prefHeight="27.0" prefWidth="411.0" style="-fx-padding: 5; -fx-border-radius: 10px; -fx-background-color: #ADFFAD;" text="Product deleted successfully!&#10;" textAlignment="CENTER" textFill="#006505">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="input_field" fx:id="pname2" disable="true" layoutX="127.0" layoutY="94.0" prefHeight="25.0" prefWidth="200.0" promptText="Product Name">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font></TextField>
+                              <Pane fx:id="del_notif" layoutX="22.0" layoutY="178.0" opacity="0.0" prefHeight="140.0" prefWidth="403.0" style="-fx-background-radius: 15; -fx-border-radius: 15px; -fx-border-color: red; -fx-background-color: #FF9999;">
+                                 <children>
+                                    <Label contentDisplay="RIGHT" layoutX="23.0" layoutY="14.0" prefHeight="30.0" prefWidth="363.0" style="-fx-padding: 5px;" text="Are you sure you want to delete" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="d_pname" alignment="CENTER" contentDisplay="RIGHT" layoutX="101.0" layoutY="40.0" prefHeight="27.0" prefWidth="208.0" style="-fx-padding: 5px;" text="product name here" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button id="input_field" fx:id="del_btn_yes" layoutX="83.0" layoutY="86.0" mnemonicParsing="false" onAction="#delYes" prefHeight="11.0" prefWidth="77.0" style="-fx-border-color: red; -fx-background-color: #FF4747;" text="YES" textFill="WHITE" />
+                                    <Button id="input_field" fx:id="clear_btn211" layoutX="245.0" layoutY="86.0" mnemonicParsing="false" onAction="#delNo" prefHeight="11.0" prefWidth="77.0" style="-fx-background-color: #64FF6A; -fx-border-color: green;" text="NO" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <VBox fx:id="vbx2" layoutX="2.0" layoutY="8.0" prefHeight="30.0" prefWidth="397.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab onSelectionChanged="#tabChange" text="Add Stock To Product">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="335.0" prefWidth="700.0">
+                     <children>
+                        <TableView fx:id="p_table4" layoutX="3.0" layoutY="40.0" prefHeight="446.0" prefWidth="405.0">
+                           <columns>
+                              <TableColumn fx:id="c12" prefWidth="54.0" sortable="false" text="#" />
+                              <TableColumn fx:id="c22" prefWidth="185.0" sortable="false" text="Product Name" />
+                              <TableColumn fx:id="c32" prefWidth="90.0" sortable="false" text="Quantity Left" />
+                              <TableColumn fx:id="c42" prefWidth="72.0" sortable="false" text="RSP" />
+                           </columns></TableView>
+                        <Pane layoutX="425.0" layoutY="40.0" prefHeight="446.0" prefWidth="451.0" style="-fx-border-color: #5a4545;">
+                           <children>
+                              <Label contentDisplay="RIGHT" layoutX="47.0" layoutY="94.0" prefHeight="27.0" prefWidth="101.0" style="-fx-padding: 5px;" text="Product Name :" textFill="#5a4545" />
+                              <Button id="submit_btn" fx:id="stock_btn" layoutX="65.0" layoutY="308.0" mnemonicParsing="false" onAction="#addStock" prefHeight="41.0" prefWidth="322.0" text="Add Stock" textFill="WHITE" />
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="40.0" prefWidth="450.0" style="-fx-padding: 10px; -fx-background-color: #5a4545;" text="Add Stock" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="stock_notify" alignment="CENTER" contentDisplay="RIGHT" layoutX="19.0" layoutY="54.0" opacity="0.0" prefHeight="27.0" prefWidth="411.0" style="-fx-padding: 5; -fx-border-radius: 10px; -fx-background-color: #ADFFAD;" text="Stock added sucessfully!" textAlignment="CENTER" textFill="#006505">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="input_field" fx:id="pname_s" disable="true" layoutX="148.0" layoutY="91.0" prefHeight="25.0" prefWidth="200.0" promptText="Product Name">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </TextField>
+                              <Label contentDisplay="RIGHT" layoutX="46.0" layoutY="244.0" prefHeight="27.0" prefWidth="201.0" style="-fx-padding: 5px;" text="Amount :" textFill="#5a4545" />
+                              <TextField id="input_field" fx:id="stock_amt" layoutX="120.0" layoutY="242.0" prefHeight="29.0" prefWidth="200.0" promptText="Amount">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <TextField id="input_field" fx:id="qty_l" disable="true" layoutX="52.0" layoutY="175.0" prefHeight="33.0" prefWidth="150.0" promptText="Qty Left">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </TextField>
+                              <Label contentDisplay="RIGHT" layoutX="52.0" layoutY="148.0" prefHeight="27.0" prefWidth="92.0" style="-fx-padding: 5px;" text="Quantity Left :" textFill="#5a4545" />
+                              <Label fx:id="amounts" contentDisplay="RIGHT" layoutX="19.0" layoutY="355.0" prefHeight="27.0" prefWidth="201.0" style="-fx-padding: 5px;" textFill="#5a4545" />
+                              <Label contentDisplay="RIGHT" layoutX="243.0" layoutY="148.0" prefHeight="27.0" prefWidth="98.0" style="-fx-padding: 5px;" text="Re-Stock-Point:" textFill="#5a4545" />
+                              <TextField id="input_field" fx:id="rsp_s2" disable="true" layoutX="243.0" layoutY="175.0" prefHeight="33.0" prefWidth="150.0" promptText="RSP" style="-fx-background-color: white; -fx-border-color: red;">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </Pane>
+                        <VBox fx:id="vbx1" layoutX="7.0" layoutY="8.0" prefHeight="30.0" prefWidth="397.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

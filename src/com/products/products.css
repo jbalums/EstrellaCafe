@@ -1,0 +1,63 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+#input_field{
+     -fx-border-color: #6A4F46;
+     -fx-padding:5px;
+}
+#input_red{
+    
+     -fx-border-color: red;
+     -fx-padding:5px;
+}
+#show{
+    -fx-opacity:1;
+}
+#hide{
+    -fx-opacity:0;
+}
+#hide2{
+    -fx-opacity:0;
+}
+
+
+#submit_btn{
+    -fx-background-color:#10AA24;
+    -fx-border-color: green;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+}
+#submit_btn:hover{
+    -fx-background-color:#016E0F;
+    -fx-border-color: black;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+}
+#del_btn{
+    -fx-background-color:#FF4747;
+    -fx-border-color: red;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+}
+#del_btn:hover{
+    -fx-background-color:#FF1C1C;
+    -fx-border-color: white;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+}
+#edit_btn{
+    -fx-background-color:#5AC8FF;
+    -fx-border-color: blue;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+}
+#edit_btn:hover{
+    -fx-background-color:#23B6FF;
+    -fx-border-color: black;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+}

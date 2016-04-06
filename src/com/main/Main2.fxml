@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minWidth="-Infinity" prefHeight="675.0" prefWidth="1087.0" style="-fx-border-color: #5B3E36;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.MainController">
+    <stylesheets>
+        <URL value="@main.css" />
+    </stylesheets>
+   <children>
+      <Pane id="menu_bar" prefHeight="35.0" prefWidth="1087.0" style="-fx-padding: 10px;">
+         <children>
+            <Button fx:id="close_btn" layoutX="1049.0" layoutY="3.0" mnemonicParsing="false" onAction="#exit" onMouseEntered="#exit_hover" onMouseExited="#exit_hover_out" prefHeight="27.0" prefWidth="31.0" style="-fx-background-position: 0[x;" styleClass="close_btn" text="x" textFill="WHITE" />
+            <ImageView fx:id="logo2" blendMode="COLOR_BURN" fitHeight="35.0" fitWidth="44.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <Blend />
+               </effect>
+               <image>
+                  <Image url="@../../../assets/logo.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fx:id="logo" blendMode="MULTIPLY" fitHeight="111.0" fitWidth="132.0" layoutX="19.0" layoutY="44.0" pickOnBounds="true">
+         <effect>
+            <Blend />
+         </effect>
+      </ImageView>
+      <AnchorPane fx:id="form_pane" layoutX="171.0" layoutY="37.0" minWidth="-Infinity" prefHeight="675.0" prefWidth="913.0" style="-fx-border-color: #5B3E36;" />
+      <Button id="menu_btn" fx:id="go" blendMode="MULTIPLY" layoutX="1.0" layoutY="198.0" mnemonicParsing="false" onAction="#go" opacity="0.0" prefHeight="39.0" prefWidth="170.0" text="Home" textFill="WHITE" />
+      <Button id="menu_btn" fx:id="product_btn" blendMode="MULTIPLY" layoutX="1.0" layoutY="239.0" mnemonicParsing="false" onAction="#products" prefHeight="39.0" prefWidth="170.0" text="Products" textFill="WHITE" />
+      <Button id="menu_btn" fx:id="order_btn" blendMode="MULTIPLY" layoutX="1.0" layoutY="281.0" mnemonicParsing="false" onAction="#orders" prefHeight="39.0" prefWidth="170.0" text="Order" textFill="WHITE" />
+      <Button id="menu_btn" fx:id="logoutbtn" blendMode="MULTIPLY" layoutX="1.0" layoutY="547.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="170.0" text="Exit" textFill="WHITE" />
+      <Button id="menu_btn" fx:id="order_btn1" blendMode="MULTIPLY" layoutX="1.0" layoutY="338.0" mnemonicParsing="false" onAction="#orders" opacity="0.0" prefHeight="39.0" prefWidth="170.0" text="Supplier" textFill="WHITE" />
+      <Label fx:id="username" alignment="CENTER" layoutY="157.0" minWidth="-Infinity" prefHeight="40.0" prefWidth="172.0" style="-fx-padding: 10px; -fx-background-radius: 0; -fx-border-color: #5B3E36; -fx-border-radius: 0; -fx-background-color: #5B3E36;" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

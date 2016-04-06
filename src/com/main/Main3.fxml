@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minWidth="-Infinity" prefHeight="532.0" prefWidth="882.0" style="-fx-border-color: #5B3E36;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.MainController">
+    <stylesheets>
+        <URL value="@main.css" />
+    </stylesheets>
+   <children>
+      <Pane id="menu_bar" prefHeight="35.0" prefWidth="882.0" style="-fx-padding: 10px;">
+         <children>
+            <Button fx:id="close_btn" layoutX="847.0" layoutY="4.0" mnemonicParsing="false" onAction="#exit" onMouseEntered="#exit_hover" onMouseExited="#exit_hover_out" prefHeight="27.0" prefWidth="31.0" styleClass="close_btn" text="x" textFill="WHITE" />
+         </children>
+      </Pane>
+      <ImageView fx:id="logo" blendMode="MULTIPLY" fitHeight="111.0" fitWidth="132.0" layoutX="20.0" layoutY="58.0" pickOnBounds="true">
+         <effect>
+            <Blend />
+         </effect>
+      </ImageView>
+      <AnchorPane fx:id="form_pane" layoutX="170.0" layoutY="44.0" minWidth="-Infinity" prefHeight="480.0" prefWidth="700.0" style="-fx-border-color: #5B3E36;" />
+      <Button id="menu_btn" fx:id="go" blendMode="MULTIPLY" layoutX="4.0" layoutY="185.0" mnemonicParsing="false" onAction="#go" prefHeight="39.0" prefWidth="163.0" text="Home" textFill="WHITE" />
+      <Button id="menu_btn" fx:id="product_btn" blendMode="MULTIPLY" layoutX="4.0" layoutY="227.0" mnemonicParsing="false" onAction="#products" prefHeight="39.0" prefWidth="163.0" text="Products" textFill="WHITE" />
+      <Button id="menu_btn" fx:id="order_btn" blendMode="MULTIPLY" layoutX="4.0" layoutY="269.0" mnemonicParsing="false" onAction="#orders" prefHeight="39.0" prefWidth="163.0" text="Order" textFill="WHITE" />
+      <Button id="menu_btn" fx:id="go111" blendMode="MULTIPLY" layoutX="4.0" layoutY="471.0" mnemonicParsing="false" onAction="#go" prefHeight="39.0" prefWidth="163.0" text="Logout" textFill="WHITE" />
+   </children>
+</AnchorPane>
